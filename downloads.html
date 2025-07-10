@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Al Hadi Quranic Institute - Download Courses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            color: #2F2E2C;
+            background-color: #F5F3EF;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            padding: 20px 100px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 80px;
+            padding: 0 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 40px;
+        }
+
+        nav .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        nav .links ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav .links ul li a {
+            position: relative;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #333;
+            text-decoration: none;
+            padding: 6px 4px;
+            transition: color 0.3s ease;
+        }
+
+        nav .links ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #1e6ab7;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav .links ul li a:hover {
+            color: #1e6ab7;
+        }
+
+        nav .links ul li a:hover::after {
+            width: 100%;
+        }
+
+        .download-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #a4d65e 0%, #8bc34a 100%);
+            border-radius: 15px;
+            color: #2F2E2C;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+        }
+
+        .download-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .download-header .highlight {
+            color: #d32f2f;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .download-header .highlight:hover {
+            color: #b71c1c;
+        }
+
+        .download-header p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .download-header .quran-link {
+            color: #d32f2f;
+            text-decoration: underline;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .download-header .quran-link:hover {
+            color: #b71c1c;
+        }
+
+        .courses-section {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #1e6ab7;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .class-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* border-left: 5px solid #1e6ab7; */
+        }
+
+        .class-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .class-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .class-icon {
+            width: 50px;
+            height: 50px;
+            background: #1e6ab7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .class-info h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .class-age {
+            color: #666;
+            font-size: 0.9rem;
+            background: #f0f9ff;
+            padding: 4px 8px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .class-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #1e6ab7 0%, #155a99 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            justify-content: center;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(30, 106, 183, 0.4);
+        }
+
+        .download-btn i {
+            font-size: 1.1rem;
+        }
+
+        .classes-4-10 {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            /* border-left: 5px solid #8bc34a;  */
+        }
+
+        .classes-4-10 h2 {
+            font-size: 2rem;
+            color: #1e6ab7;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .classes-4-10 h2 i {
+            color: #8bc34a;
+        }
+
+        .classes-4-10 .description {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .advanced-classes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .advanced-class {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #8bc34a;
+            transition: transform 0.3s ease;
+        }
+
+        .advanced-class:hover {
+            transform: translateX(5px);
+            background: #f0f9ff;
+        }
+
+        .advanced-class h4 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .advanced-class .age-range {
+            color: #666;
+            font-size: 0.9rem;
+            background: #e8f5e8;
+            padding: 3px 8px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .advanced-class .download-link {
+            color: #1e6ab7;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .advanced-class .download-link:hover {
+            color: #155a99;
+        }
+
+        .footer {
+            background-color: #2F2E2C;
+            color: #ffffff;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: #1e6ab7;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-about p {
+            color: #d1d5db;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #1e6ab7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: #155a99;
+            transform: translateY(-3px);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: #1e6ab7;
+        }
+
+        .footer-contact-info {
+            color: #d1d5db;
+            line-height: 1.8;
+        }
+
+        .footer-contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-contact-info i {
+            width: 20px;
+            color: #1e6ab7;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4a4a4a;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom p {
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-bottom-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #1e6ab7;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                height: auto;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .links {
+                width: 100%;
+                margin-top: 1rem;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transition: max-height 0.4s ease, opacity 0.3s ease;
+            }
+
+            .links.show {
+                max-height: 500px;
+                opacity: 1;
+            }
+
+            .links ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .download-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .classes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+        .register {
+            position: fixed;
+            bottom: 20px;
+            right: 60px;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            background-color: #1e6ab7;
+            color: whitesmoke;
+            text-align: center;
+            padding-top: 15px;
+            border: none;
+            box-shadow: 0 5px 20px #155999df;
+            font-weight: bold;
+            cursor: pointer;
+            animation: bounce 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+
+            text-decoration: none;
+
+            font-size: 14px;
+        }
+
+        /* Hover effect */
+        .register:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #155999;
+            box-shadow: 0 8px 25px #155999;
+        }
+
+        /* Bounce animation */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="https://yourdomain.com/register" class="register">Register Now</a>
+        <nav>
+            <div class="logo">
+                <img src="https://ihadi.weebly.com/uploads/1/0/1/9/101906034/published/logo.png?1512313999"
+                    alt="Al Hadi logo">
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="links" id="navLinks">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./index.html#fee">Fee</a></li>
+                    <li><a href="#">Registration Form</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                    <li><a href="#" style="color: #1e6ab7; font-weight: 600;">Download Course</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="download-header">
+            <h1>Download Noorani Qaida <a href="https://www.equranschool.com/noorani_qaida.pdf" target="_blank"><span
+                        class="highlight">Click here</span></a></h1>
+            <p>Download Quran with tajweed colours <a
+                    href="https://archive.org/download/bensaoud_gmail_20170308_0721/%D9%85%D8%B5%D8%AD%D9%81%20%D8%A7%D9%84%D8%AA%D8%AC%D9%88%D9%8A%D8%AF%20%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%86.pdf">
+                    <span class="quran-link">click here</span></a></p>
+        </div>
+
+        <div class="courses-section" id="course">
+            <h2 class="section-title">Classes 1-3</h2>
+            <p style="text-align: center; margin-bottom: 40px; color: #666; font-size: 1.1rem;">
+                These classes have taken an 'integrated' approach to their notes, where subjects are not specifically
+                separated. Rather, by order of those subjects that link well with each other, the syllabus allows
+                easy-teaching by our teachers, and understanding for our students to link aspects of Islamic learning
+                that go hand in hand.
+            </p>
+            <p style="text-align: center; margin-bottom: 40px; color: #1e6ab7; font-weight: 600;">
+                Click on the Class to download books
+            </p>
+
+            <div class="classes-grid">
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="class-info">
+                            <h3>Class 1</h3>
+                            <span class="class-age">Age 4 to 5</span>
+                        </div>
+                    </div>
+                    <div class="class-description">
+                        Foundation level Islamic studies with basic Arabic alphabet recognition, simple duas, and
+                        introduction to Islamic values through interactive learning methods.
+                    </div>
+                    <a href="http://www.madressa.net/public/notes_2017/2017_Class1_Students_PrintReady.pdf" class="download-btn">
+                        <i class="fas fa-download"></i>
+                        Download Class 1 Materials
+                    </a>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-icon">
+                            <i class="fas fa-quran"></i>
+                        </div>
+                        <div class="class-info">
+                            <h3>Class 2</h3>
+                            <span class="class-age">Age 5 to 6</span>
+                        </div>
+                    </div>
+                    <div class="class-description">
+                        Building upon Class 1, students learn basic Quranic reading, simple Islamic stories, and
+                        fundamental prayer movements through engaging activities.
+                    </div>
+                    <a href="http://www.madressa.net/public/notes_2017/2017_Class2_Students_PrintReady.pdf" class="download-btn">
+                        <i class="fas fa-download"></i>
+                        Download Class 2 Materials
+                    </a>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-header">
+                        <div class="class-icon">
+                            <i class="fas fa-mosque"></i>
+                        </div>
+                        <div class="class-info">
+                            <h3>Class 3</h3>
+                            <span class="class-age">Age 6 to 7</span>
+                        </div>
+                    </div>
+                    <div class="class-description">
+                        Advanced foundation level covering basic tajweed rules, essential Islamic teachings, and
+                        preparation for more structured Quranic studies.
+                    </div>
+                    <a href="http://www.madressa.net/public/notes_2017/2017_Class3_Students_PrintReady.pdf" class="download-btn">
+                        <i class="fas fa-download"></i>
+                        Download Class 3 Materials
+                    </a>
+                </div>
+            </div>
+
+            <div class="classes-4-10">
+                <h2><i class="fas fa-graduation-cap"></i> Classes 4 - 10</h2>
+                <div class="description">
+                    These notes consist of Belief and Actions (Fiqh/Aqaid) and Morals, Ethics, and History
+                    (Akhlaq/Tarikh). After a lot of consideration, the notes have been strategically formatted to
+                    interlink between subjects where relevant. This allows easy teaching and a better understanding of
+                    how Islam links and brings together aspects of our Morals and Ethics, with History.
+                </div>
+
+                <div class="advanced-classes">
+                    <div class="advanced-class">
+                        <h4>Class 4</h4>
+                        <div class="age-range">Age 7 to 8</div>
+                        <a href="http://www.madressa.net/public/notes_2017/2017_Class4_Students_PrintReady.pdf" class="download-link">
+                            <i class="fas fa-download"></i>
+                            Download Materials
+                        </a>
+                    </div>
+
+                    <div class="advanced-class">
+                        <h4>Class 5</h4>
+                        <div class="age-range">Age 8 to 9</div>
+                        <a href="http://www.madressa.net/public/notes_2017/2017_Class5_Students_PrintReady.pdf" class="download-link">
+                            <i class="fas fa-download"></i>
+                            Download Materials
+                        </a>
+                    </div>
+
+                    <div class="advanced-class">
+                        <h4>Class 6</h4>
+                        <div class="age-range">Age 9 to 10</div>
+                        <a href="http://www.madressa.net/public/notes_2017/2017_Class6_Students_PrintReady.pdf" class="download-link">
+                            <i class="fas fa-download"></i>
+                            Download Materials
+                        </a>
+                    </div>
+
+                    <div class="advanced-class">
+                        <h4>Class 7</h4>
+                        <div class="age-range">Age 10 to 11</div>
+                        <a href="http://www.madressa.net/public/notes_2017/2017_Class7_Students_PrintReady.pdf" class="download-link">
+                            <i class="fas fa-download"></i>
+                            Download Materials
+                        </a>
+                    </div>
+
+                    <div class="advanced-class">
+                        <h4>Class 8</h4>
+                        <div class="age-range">Age 11 to 12</div>
+                        <a href="http://www.madressa.net/public/notes_2017/2017_Class8_Students_PrintReady.pdf" class="download-link">
+                            <i class="fas fa-download"></i>
+                            Download Materials
+                        </a>
+                    </div>
+
+                    <div class="advanced-class">
+                        <h4>Class 9</h4>
+                        <div class="age-range">Age 12 to 13</div>
+                        <a href="http://www.madressa.net/public/notes_2017/2017_Class9_Students_PrintReady.pdf" class="download-link">
+                            <i class="fas fa-download"></i>
+                            Download Materials
+                        </a>
+                    </div>
+
+                    <div class="advanced-class">
+                        <h4>Class 10</h4>
+                        <div class="age-range">Age 13 to 14</div>
+                        <a href="http://www.madressa.net/public/notes_2017/2017_Class10_Students_PrintReady.pdf" class="download-link">
+                            <i class="fas fa-download"></i>
+                            Download Materials
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section footer-about">
+                    <h3>About Our Quran Teaching</h3>
+                    <p>We are dedicated to providing quality Quran education with proper Tajweed and Islamic teachings.
+                        Our experienced teachers help students of all ages learn and understand the Holy Quran in a
+                        comfortable online environment.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="#courses">Our Courses</a></li>
+                        <li><a href="./index.html#about">About Us</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-links">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li><a href="#course">Basic Quran Reading</a></li>
+                        <li><a href="#course">Tajweed Course</a></li>
+                        <li><a href="#course">Quran Memorization</a></li>
+                        <li><a href="#course">Arabic Language</a></li>
+                        <li><a href="#course">Islamic Studies</a></li>
+                        <li><a href="#course">Kids Classes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Sialkot, Punjab, Pakistan</p>
+                        <p><i class="fas fa-phone"></i> +92 304 4719851</p>
+                        <p><i class="fas fa-envelope"></i> asgharabbaskhosa@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</p>
+                        <p><i class="fas fa-globe"></i> www.ihadi.weebly.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Al Hadi Quranic Institute. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+
+            navLinks.classList.toggle('show');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById('navLinks');
+                const hamburger = document.querySelector('.hamburger');
+
+                navLinks.classList.remove('show');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add click handlers for download buttons
+       
+    </script>
+</body>
+
+</html>
