@@ -1269,28 +1269,29 @@ nav .links ul li a.active {
     padding: 20px !important;
   }
 }
-.register {
+.whatsapp {
   position: fixed;
   bottom: 20px;
   right: 60px;
-  height: 70px;
-  width: 70px;
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
-  background-color: #1e6ab7;
-  color: whitesmoke;
+  background-color: #25D366;
+  color: white;
+  font-size: 30px;
   text-align: center;
-  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
-  box-shadow: 0 5px 20px #155999df;
-  font-weight: bold;
+  box-shadow: 0 5px 20px rgba(37, 211, 102, 0.6);
   cursor: pointer;
   animation: bounce 2s ease-in-out infinite;
   transition: all 0.3s ease;
   z-index: 100;
   text-decoration: none;
-   
-  font-size: 14px;
 }
+
 
 /* Hover effect */
 .register:hover {
