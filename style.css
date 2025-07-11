@@ -32,6 +32,7 @@ nav {
   padding: 0 2rem;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10);
   position: fixed;
   top: 0;
   left: 0;
