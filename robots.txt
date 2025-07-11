@@ -9,9 +9,31 @@ Disallow: /*.jpg$
 Disallow: /*.jpeg$
 Disallow: /*.gif$
 Disallow: /*.svg$
+Disallow: /*.pdf$
+Disallow: /*.zip$
+Disallow: /*.rar$
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /backup/
+
+# Allow important directories
+Allow: /images/
+Allow: /assets/
+Allow: /css/
+Allow: /js/
 
 # Sitemap location
 Sitemap: https://quraniciq.com/sitemap.xml
 
-# Crawl delay (optional - helps with server load)
+# Crawl delay (helps with server load)
 Crawl-delay: 1
+
+# Additional directives for better SEO
+# Host directive (if you have multiple domains)
+# Host: quraniciq.com
+
+# Clean param directive (if you have URL parameters)
+# Clean-param: utm_source&utm_medium&utm_campaign
