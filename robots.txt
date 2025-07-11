@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
 
+# Disallow specific file types that shouldn't be indexed
+Disallow: /*.css$
+Disallow: /*.js$
+Disallow: /*.png$
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.gif$
+Disallow: /*.svg$
+
+# Sitemap location
 Sitemap: https://quraniciq.com/sitemap.xml
+
+# Crawl delay (optional - helps with server load)
+Crawl-delay: 1
