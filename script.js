@@ -178,3 +178,63 @@ document.addEventListener('DOMContentLoaded', function() {
   /* Add transition delay to prevent flickering */
  
 });
+
+
+
+
+// FAQ Toggle Functionality
+function toggleFAQ(element) {
+    const faqItem = element.parentElement;
+    const isActive = faqItem.classList.contains('active');
+    
+    // Close all FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // If this item wasn't active, open it
+    if (!isActive) {
+        faqItem.classList.add('active');
+    }
+}
+
+// Add smooth scrolling for better UX
+document.addEventListener('DOMContentLoaded', function() {
+    // Auto-scroll to FAQ when opened
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            setTimeout(() => {
+                if (this.parentElement.classList.contains('active')) {
+                    this.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                }
+            }, 100);
+        });
+    });
+});
+
+// Add keyboard accessibility
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+        if (e.target.classList.contains('faq-question')) {
+            e.preventDefault();
+            toggleFAQ(e.target);
+        }
+    }
+});
+
+// Add focus management for accessibility
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.setAttribute('tabindex', '0');
+    question.setAttribute('role', 'button');
+    question.setAttribute('aria-expanded', 'false');
+    
+    question.addEventListener('click', function() {
+        const isExpanded = this.parentElement.classList.contains('active');
+        this.setAttribute('aria-expanded', isExpanded);
+    });
+});
