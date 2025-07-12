@@ -13,11 +13,7 @@ Disallow: /*.pdf$
 Disallow: /*.zip$
 Disallow: /*.rar$
 
-# Disallow admin or private areas (if any)
-Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
-Disallow: /backup/
+
 
 # Allow important directories
 Allow: /images/
