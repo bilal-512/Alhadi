@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Knowledge Blog - Learn Quran Online | Quranic IQ Center</title>
+    <meta name="description" content="Explore our comprehensive Islamic knowledge blog with articles on Quran learning, Tajweed, memorization techniques, and spiritual guidance. Expert insights for your Islamic education journey.">
+    <meta name="keywords" content="Islamic blog, Quran learning articles, Tajweed guides, Islamic education, Quran memorization tips, Islamic knowledge, online Quran classes, Islamic spirituality">
+    <meta name="author" content="Quranic IQ Center">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://quraniciq.com/blog">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Islamic Knowledge Blog - Learn Quran Online | Quranic IQ Center">
+    <meta property="og:description" content="Explore our comprehensive Islamic knowledge blog with articles on Quran learning, Tajweed, memorization techniques, and spiritual guidance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://quraniciq.com/blog">
+    <meta property="og:image" content="https://quraniciq.com/images/blog-og-image.jpg">
+    <meta property="og:site_name" content="Quranic IQ Center">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Islamic Knowledge Blog - Learn Quran Online">
+    <meta name="twitter:description" content="Explore our comprehensive Islamic knowledge blog with articles on Quran learning, Tajweed, memorization techniques, and spiritual guidance.">
+    <meta name="twitter:image" content="https://quraniciq.com/images/blog-twitter-image.jpg">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Quranic IQ Islamic Knowledge Blog",
+      "description": "Comprehensive Islamic knowledge blog covering Quran learning, Tajweed, memorization techniques, and spiritual guidance",
+      "url": "https://quraniciq.com/blog",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Quranic IQ Center",
+        "url": "https://quraniciq.com"
+      },
+      "inLanguage": "en",
+      "genre": "Islamic Education"
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        html, body {
+            font-family: 'Inter', sans-serif;
+            color: #2F2E2C;
+            overflow-x: hidden;
+            scroll-padding-top: 80px;
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 80px;
+            padding: 0 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        nav .links ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav .links ul li a {
+            position: relative;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #333;
+            text-decoration: none;
+            padding: 8px 12px;
+            transition: all 0.3s ease;
+        }
+
+        nav .links ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #1e6ab7;
+            transition: width 0.3s ease;
+        }
+
+        nav .links ul li a:hover, nav .links ul li a.active {
+            color: #1e6ab7;
+            font-weight: 600;
+        }
+
+        nav .links ul li a:hover::after, nav .links ul li a.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Blog Page Styles */
+        .blog-container {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #F5F3EF;
+            padding: 100px 2rem 2rem;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .blog-header h1 {
+            font-size: 3.5rem;
+            color: #1e6ab7;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .blog-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1e6ab7, #2980b9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .blog-category {
+            background: #1e6ab7;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .blog-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2F2E2C;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .blog-read-more {
+            color: #1e6ab7;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .blog-read-more:hover {
+            gap: 1rem;
+            color: #155a99;
+        }
+
+        /* Blog Post Modal */
+        .blog-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .blog-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .blog-modal-content {
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            margin: auto;
+            border-radius: 16px;
+            overflow: hidden;
+            animation: slideIn 0.3s ease;
+        }
+
+        .blog-modal-header {
+            background: linear-gradient(135deg, #1e6ab7, #2980b9);
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .blog-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .blog-modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .blog-modal-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .blog-modal-meta {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .blog-modal-body {
+            padding: 2rem;
+            overflow-y: auto;
+            max-height: 60vh;
+        }
+
+        .blog-modal-body h3 {
+            color: #1e6ab7;
+            margin: 2rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .blog-modal-body p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #444;
+        }
+
+        .quran-verse {
+            font-family: 'Amiri', serif;
+            direction: rtl;
+            font-size: 1.5rem;
+            color: #1e6ab7;
+            line-height: 1.8;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #1e6ab7;
+        }
+
+        .verse-translation {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin-top: 1rem;
+            direction: ltr;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            padding: 0 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumbs a {
+            color: #1e6ab7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumbs a:hover {
+            color: #155a99;
+        }
+
+        .breadcrumbs span {
+            margin: 0 0.5rem;
+        }
+
+        /* SEO Content Section */
+        .seo-content {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        .seo-content h2 {
+            font-size: 2.5rem;
+            color: #1e6ab7;
+            margin-bottom: 1rem;
+        }
+
+        .seo-content p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Categories Filter */
+        .categories-filter {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 1rem;
+        }
+
+        .categories-filter h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #2F2E2C;
+        }
+
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            background: #f8f9fa;
+            color: #666;
+            border: 2px solid #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #1e6ab7;
+            color: white;
+            border-color: #1e6ab7;
+        }
+
+        /* Related Posts Section */
+        .related-posts {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .related-posts h4 {
+            color: #1e6ab7;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .related-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .related-post-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .related-post-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .related-post-item h5 {
+            color: #2F2E2C;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .related-post-item a {
+            color: #1e6ab7;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .related-post-item a:hover {
+            color: #155a99;
+        }
+
+        /* Internal Links Styling */
+        .internal-link {
+            color: #1e6ab7;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #1e6ab7;
+            transition: all 0.3s ease;
+        }
+
+        .internal-link:hover {
+            color: #155a99;
+            border-bottom-style: solid;
+        }
+
+        /* Popular Posts Sidebar */
+        .popular-posts-sidebar {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin: 2rem 0;
+        }
+
+        .popular-posts-sidebar h3 {
+            color: #1e6ab7;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .popular-post {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .popular-post:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .popular-post-number {
+            background: #1e6ab7;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .popular-post-content h4 {
+            color: #2F2E2C;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .popular-post-content a {
+            color: #1e6ab7;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .popular-post-content a:hover {
+            color: #155a99;
+        }
+
+        /* Tags Section */
+        .tags-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin: 2rem 0;
+        }
+
+        .tags-section h3 {
+            color: #1e6ab7;
+            margin-bottom: 1rem;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #f8f9fa;
+            color: #666;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: #1e6ab7;
+            color: white;
+        }
+
+        .tag.active {
+            background: #1e6ab7;
+            color: white;
+            font-weight: 600;
+        }
+
+        .blog-card {
+            transition: all 0.3s ease, opacity 0.3s ease;
+        }
+
+        .blog-card.hidden {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .no-results-message {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .no-results-message i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+
+        .no-results-message h3 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Main Content Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .content-area {
+            min-width: 0;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .links.active {
+                display: block;
+            }
+
+            .links ul {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .blog-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .blog-modal-content {
+                width: 95%;
+                margin: 2rem auto;
+            }
+
+            .blog-modal-title {
+                font-size: 1.5rem;
+            }
+
+            .blog-container {
+                padding: 100px 1rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="https://ihadi.weebly.com/uploads/1/0/1/9/101906034/published/logo.png?1512313999" alt="Quranic IQ logo">
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="links" id="navLinks">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#fee">Fee</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <li><a href="./blog.html" class="active">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Container -->
+    <div class="blog-container">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a href="/">Home</a>
+            <span>></span>
+            <span>Blog</span>
+        </div>
+
+        <!-- Blog Header -->
+        <div class="blog-header">
+            <h1>Islamic Knowledge & Guidance Blog</h1>
+            <p>Explore comprehensive articles about Quran learning, Tajweed mastery, Islamic teachings, and spiritual guidance to enhance your faith journey with expert insights and practical tips.</p>
+        </div>
+
+
+
+        <!-- Main Content Layout -->
+        <div class="main-content">
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Blog Grid -->
+                <div class="blog-grid">
+                    <!-- Blog Card 1 -->
+                    <article class="blog-card" data-category="tajweed" onclick="openBlogModal('blog1')">
+                        <div class="blog-image">
+                            <i class="fas fa-book-quran"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Quran Learning</span>
+                                <span><i class="fas fa-calendar"></i> March 15, 2024</span>
+                            </div>
+                            <h3 class="blog-title">The Importance of Learning Quran with Tajweed</h3>
+                            <p class="blog-excerpt">Master the art of beautiful Quran recitation with proper Tajweed rules. Learn why correct pronunciation preserves the divine message and enhances spiritual connection...</p>
+                            <a href="#" class="blog-read-more">Read Complete Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 2 -->
+                    <article class="blog-card" data-category="spiritual-growth" onclick="openBlogModal('blog2')">
+                        <div class="blog-image">
+                            <i class="fas fa-praying-hands"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Spiritual Growth</span>
+                                <span><i class="fas fa-calendar"></i> March 12, 2024</span>
+                            </div>
+                            <h3 class="blog-title">7 Proven Benefits of Daily Quran Recitation</h3>
+                            <p class="blog-excerpt">Discover the spiritual, mental, and physical benefits of incorporating daily Quran recitation into your routine. Scientific research confirms what believers have known for centuries...</p>
+                            <a href="#" class="blog-read-more">Explore Benefits <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 3 -->
+                    <article class="blog-card" data-category="kids-classes" onclick="openBlogModal('blog3')">
+                        <div class="blog-image">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Kids Education</span>
+                                <span><i class="fas fa-calendar"></i> March 10, 2024</span>
+                            </div>
+                            <h3 class="blog-title">Teaching Quran to Children: Complete Parent's Guide</h3>
+                            <p class="blog-excerpt">Step-by-step strategies for introducing children to Quranic education. Age-appropriate techniques, fun activities, and proven methods that make learning enjoyable...</p>
+                            <a href="#" class="blog-read-more">View Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 4 -->
+                    <article class="blog-card" data-category="memorization" onclick="openBlogModal('blog4')">
+                        <div class="blog-image">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Memorization</span>
+                                <span><i class="fas fa-calendar"></i> March 8, 2024</span>
+                            </div>
+                            <h3 class="blog-title">10 Effective Techniques for Quran Memorization (Hifz)</h3>
+                            <p class="blog-excerpt">Master proven memorization methods used by successful Huffaz worldwide. Time-tested techniques for efficient learning and long-term retention of Quranic verses...</p>
+                            <a href="#" class="blog-read-more">Learn Techniques <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 5 -->
+                    <article class="blog-card" data-category="arabic-language" onclick="openBlogModal('blog5')">
+                        <div class="blog-image">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Arabic Language</span>
+                                <span><i class="fas fa-calendar"></i> March 5, 2024</span>
+                            </div>
+                            <h3 class="blog-title">How Learning Arabic Transforms Your Quran Experience</h3>
+                            <p class="blog-excerpt">Unlock deeper understanding of the Quran through Arabic language mastery. Discover how knowing Arabic enriches your spiritual connection and prayer experience...</p>
+                            <a href="#" class="blog-read-more">Start Learning <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 6 -->
+                    <article class="blog-card" data-category="online-learning" onclick="openBlogModal('blog6')">
+                        <div class="blog-image">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Online Learning</span>
+                                <span><i class="fas fa-calendar"></i> March 3, 2024</span>
+                            </div>
+                            <h3 class="blog-title">Why Online Quran Classes Are More Effective Than Traditional Methods</h3>
+                            <p class="blog-excerpt">Explore the advantages of digital Quran education including personalized attention, flexible scheduling, and access to qualified teachers worldwide...</p>
+                            <a href="#" class="blog-read-more">Discover Benefits <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 7 -->
+                    <article class="blog-card" data-category="tajweed" onclick="openBlogModal('blog7')">
+                        <div class="blog-image">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Tajweed</span>
+                                <span><i class="fas fa-calendar"></i> March 1, 2024</span>
+                            </div>
+                            <h3 class="blog-title">Common Tajweed Mistakes and How to Avoid Them</h3>
+                            <p class="blog-excerpt">Learn about the most frequent pronunciation errors in Quran recitation and practical tips to correct them. Improve your Tajweed with expert guidance...</p>
+                            <a href="#" class="blog-read-more">Fix Mistakes <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 8 -->
+                    <article class="blog-card" data-category="spiritual-growth" onclick="openBlogModal('blog8')">
+                        <div class="blog-image">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">Spiritual Growth</span>
+                                <span><i class="fas fa-calendar"></i> February 28, 2024</span>
+                            </div>
+                            <h3 class="blog-title">Building a Stronger Connection with Allah Through Quran</h3>
+                            <p class="blog-excerpt">Practical steps to deepen your relationship with Allah through meaningful Quran study, reflection, and implementation of Islamic teachings in daily life...</p>
+                            <a href="#" class="blog-read-more">Strengthen Faith <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Popular Posts -->
+                <div class="popular-posts-sidebar">
+                    <h3>Most Popular Articles</h3>
+                    <div class="popular-post">
+                        <div class="popular-post-number">1</div>
+                        <div class="popular-post-content">
+                            <h4>Tajweed Rules Made Simple</h4>
+                            <a href="#" onclick="openBlogModal('blog1')">Read Article</a>
+                        </div>
+                    </div>
+                    <div class="popular-post">
+                        <div class="popular-post-number">2</div>
+                        <div class="popular-post-content">
+                            <h4>Quran Memorization Tips</h4>
+                            <a href="#" onclick="openBlogModal('blog4')">Read Article</a>
+                        </div>
+                    </div>
+                    <div class="popular-post">
+                        <div class="popular-post-number">3</div>
+                        <div class="popular-post-content">
+                            <h4>Teaching Kids Quran</h4>
+                            <a href="#" onclick="openBlogModal('blog3')">Read Article</a>
+                        </div>
+                    </div>
+                    <div class="popular-post">
+                        <div class="popular-post-number">4</div>
+                        <div class="popular-post-content">
+                            <h4>Online Learning Benefits</h4>
+                            <a href="#" onclick="openBlogModal('blog6')">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="tags-section">
+                    <h3>Browse by Tags</h3>
+                    <div class="tag-cloud" id="tagCloud">
+                        <a href="#" class="tag active" data-tag="all">All Posts</a>
+                        <a href="#" class="tag" data-tag="tajweed">Tajweed</a>
+                        <a href="#" class="tag" data-tag="quran-learning">Quran Learning</a>
+                        <a href="#" class="tag" data-tag="spiritual-growth">Spiritual Growth</a>
+                        <a href="#" class="tag" data-tag="memorization">Memorization</a>
+                        <a href="#" class="tag" data-tag="islamic-education">Islamic Education</a>
+                        <a href="#" class="tag" data-tag="kids-classes">Kids Classes</a>
+                        <a href="#" class="tag" data-tag="online-learning">Online Learning</a>
+                        <a href="#" class="tag" data-tag="arabic-language">Arabic Language</a>
+                        <a href="#" class="tag" data-tag="prayer">Prayer</a>
+                        <a href="#" class="tag" data-tag="islamic-values">Islamic Values</a>
+                        <a href="#" class="tag" data-tag="hifz">Hifz</a>
+                        <a href="#" class="tag" data-tag="quran-recitation">Quran Recitation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content Section -->
+        <div class="seo-content">
+            <h2>Your Complete Guide to Islamic Learning</h2>
+            <p>At Quranic IQ, we provide comprehensive Islamic education resources covering all aspects of Quran learning, from basic Arabic alphabet to advanced Tajweed rules and complete Hifz programs. Our expert-written articles offer practical guidance for students, parents, and Islamic education enthusiasts worldwide.</p>
+            <p>Whether you're looking to <a href="#" class="internal-link">start learning Quran online</a>, improve your <a href="#" class="internal-link">Tajweed pronunciation</a>, or find effective <a href="#" class="internal-link">memorization techniques</a>, our blog provides evidence-based strategies and time-tested methods used by successful Islamic scholars and teachers.</p>
+        </div>
+    </div>blog-image">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-category">Online Learning</span>
+                        <span><i class="fas fa-calendar"></i> March 3, 2024</span>
+                    </div>
+                    <h3 class="blog-title">Advantages of Online Quran Classes</h3>
+                    <p class="blog-excerpt">Discover the benefits of learning Quran online, including flexibility, personalized attention, and access to qualified teachers...</p>
+                    <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Modal -->
+    <div class="blog-modal" id="blogModal">
+        <div class="blog-modal-content">
+            <div class="blog-modal-header">
+                <button class="blog-modal-close" onclick="closeBlogModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2 class="blog-modal-title" id="modalTitle">Blog Title</h2>
+                <div class="blog-modal-meta" id="modalMeta">Category • Date</div>
+            </div>
+            <div class="blog-modal-body" id="modalBody">
+                <!-- Blog content will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Posts Data -->
+    <script>
+        // Blog posts data with tags
+        const blogPosts = [
+            {
+                id: 'blog1',
+                title: 'Essential Tajweed Rules Every Beginner Should Know',
+                category: 'Tajweed',
+                date: 'February 25, 2024',
+                icon: 'fas fa-microphone',
+                tags: ['tajweed', 'quran-recitation', 'arabic-pronunciation', 'islamic-learning'],
+                excerpt: 'Master the fundamental Tajweed rules to improve your Quran recitation. Learn about proper pronunciation, elongation, and stopping rules with practical examples.',
+                content: `
+                    <h2>Essential Tajweed Rules Every Beginner Should Know</h2>
+                    <p>Tajweed is the science of reciting the Quran with proper pronunciation and articulation. Learning Tajweed rules is essential for every Muslim who wants to recite the Quran correctly and beautifully.</p>
+                    
+                    <h3>What is Tajweed?</h3>
+                    <p>Tajweed comes from the Arabic word "جَوَّدَ" (jawwada), which means "to make better" or "to improve." It refers to the set of rules that govern how the Quran should be recited.</p>
+                    
+                    <h3>Basic Tajweed Rules</h3>
+                    <h4>1. Makharij (Points of Articulation)</h4>
+                    <p>Every Arabic letter has a specific point of articulation in the mouth or throat:</p>
+                    <ul>
+                        <li><strong>Throat Letters</strong>: خ، غ، ح، ع</li>
+                        <li><strong>Tongue Letters</strong>: ت، ث، د، ذ، ر، ز، س، ش، ص، ض، ط، ظ، ل، ن</li>
+                        <li><strong>Lip Letters</strong>: ب، ف، م، و</li>
+                        <li><strong>Nasal Letters</strong>: ن، م</li>
+                    </ul>
+                    
+                    <h4>2. Sifaat (Characteristics)</h4>
+                    <p>Letters have specific characteristics that affect their pronunciation:</p>
+                    <ul>
+                        <li><strong>Heavy Letters</strong>: خ، ص، ض، ط، ظ، غ، ق</li>
+                        <li><strong>Light Letters</strong>: ت، ث، ح، د، ذ، ر، ز، س، ش، ع، ف، ك، ل، م، ن، ه، و، ي</li>
+                    </ul>
+                    
+                    <h3>Practical Tips for Learning Tajweed</h3>
+                    <ol>
+                        <li><strong>Start with Basic Rules</strong> - Don't try to learn everything at once</li>
+                        <li><strong>Practice with Audio</strong> - Listen to expert reciters</li>
+                        <li><strong>Use a Qualified Teacher</strong> - Find someone who can correct your mistakes</li>
+                        <li><strong>Practice Regularly</strong> - Consistency is key to mastering Tajweed</li>
+                    </ol>
+                    
+                    <p><em>"Recite the Quran with measured recitation."</em> - Quran 73:4</p>
+                `
+            },
+            {
+                id: 'blog2',
+                title: 'The Spiritual and Mental Benefits of Regular Quran Recitation',
+                category: 'Spiritual Growth',
+                date: 'February 20, 2024',
+                icon: 'fas fa-heart',
+                tags: ['quran', 'spiritual-growth', 'mental-health', 'daily-practice'],
+                excerpt: 'Discover the profound benefits of daily Quran recitation, from spiritual peace to improved memory and concentration.',
+                content: `
+                    <h2>The Spiritual and Mental Benefits of Regular Quran Recitation</h2>
+                    <p>Regular Quran recitation is not just a religious obligation but a powerful practice that brings numerous spiritual and mental benefits. In today's fast-paced world, taking time to recite the Quran daily can provide much-needed peace and clarity.</p>
+                    
+                    <h3>Spiritual Benefits</h3>
+                    <h4>1. Inner Peace and Tranquility</h4>
+                    <p>The rhythmic recitation of Quranic verses has a calming effect on the soul. The beautiful Arabic text and melodious recitation create a sense of inner peace that is hard to find elsewhere.</p>
+                    
+                    <h4>2. Strengthened Faith</h4>
+                    <p>Daily recitation helps strengthen your connection with Allah and deepens your understanding of Islamic teachings. Each verse you recite brings you closer to your Creator.</p>
+                    
+                    <h3>Mental and Cognitive Benefits</h3>
+                    <h4>1. Improved Memory</h4>
+                    <p>Memorizing and reciting Quranic verses is an excellent exercise for the brain. It improves memory retention and cognitive function.</p>
+                    
+                    <h4>2. Enhanced Concentration</h4>
+                    <p>The focused attention required for proper recitation helps develop concentration skills that benefit other areas of life.</p>
+                    
+                    <h3>Practical Tips for Daily Recitation</h3>
+                    <ol>
+                        <li><strong>Set a Consistent Time</strong> - Choose a specific time each day</li>
+                        <li><strong>Start Small</strong> - Begin with just a few verses daily</li>
+                        <li><strong>Create a Sacred Space</strong> - Designate a quiet, clean area</li>
+                        <li><strong>Use Audio Recitations</strong> - Listen to beautiful recitations</li>
+                    </ol>
+                    
+                    <p><em>"Indeed, in the remembrance of Allah do hearts find rest."</em> - Quran 13:28</p>
+                `
+            },
+            {
+                id: 'blog3',
+                title: 'Teaching Quran to Children: Complete Parent\'s Guide',
+                category: 'Kids Education',
+                date: 'March 10, 2024',
+                icon: 'fas fa-child',
+                tags: ['kids-classes', 'islamic-education', 'parenting', 'quran-learning'],
+                excerpt: 'Step-by-step strategies for introducing children to Quranic education. Age-appropriate techniques, fun activities, and proven methods that make learning enjoyable.',
+                content: `
+                    <h2>Teaching Quran to Children: Complete Parent's Guide</h2>
+                    <p>Introducing children to Quranic education is one of the most important responsibilities of Muslim parents. This guide provides practical strategies to make Quran learning enjoyable and effective for children of all ages.</p>
+                    
+                    <h3>Age-Appropriate Approaches</h3>
+                    <h4>Ages 3-5: Foundation Building</h4>
+                    <ul>
+                        <li>Introduce Arabic alphabet through games and songs</li>
+                        <li>Use colorful charts and interactive materials</li>
+                        <li>Keep sessions short (10-15 minutes)</li>
+                        <li>Make it fun with rewards and praise</li>
+                    </ul>
+                    
+                    <h4>Ages 6-8: Basic Recitation</h4>
+                    <ul>
+                        <li>Start with short surahs like Al-Fatihah</li>
+                        <li>Teach proper pronunciation gradually</li>
+                        <li>Use audio recordings for guidance</li>
+                        <li>Encourage daily practice</li>
+                    </ul>
+                    
+                    <h3>Effective Teaching Methods</h3>
+                    <ol>
+                        <li><strong>Make it Interactive</strong> - Use games and activities</li>
+                        <li><strong>Be Patient</strong> - Every child learns at their own pace</li>
+                        <li><strong>Create a Routine</strong> - Consistency is key</li>
+                        <li><strong>Lead by Example</strong> - Let children see you reciting</li>
+                    </ol>
+                    
+                    <h3>Common Challenges and Solutions</h3>
+                    <p><strong>Challenge:</strong> Children lose interest quickly<br>
+                    <strong>Solution:</strong> Keep sessions short and varied</p>
+                    
+                    <p><strong>Challenge:</strong> Difficulty with Arabic pronunciation<br>
+                    <strong>Solution:</strong> Use audio aids and practice regularly</p>
+                `
+            },
+            {
+                id: 'blog4',
+                title: '10 Effective Techniques for Quran Memorization (Hifz)',
+                category: 'Memorization',
+                date: 'March 8, 2024',
+                icon: 'fas fa-brain',
+                tags: ['memorization', 'hifz', 'quran-learning', 'islamic-education'],
+                excerpt: 'Master proven memorization methods used by successful Huffaz worldwide. Time-tested techniques for efficient learning and long-term retention of Quranic verses.',
+                content: `
+                    <h2>10 Effective Techniques for Quran Memorization (Hifz)</h2>
+                    <p>Quran memorization (Hifz) is a noble and rewarding journey that requires dedication, patience, and effective techniques. Here are proven methods used by successful Huffaz worldwide.</p>
+                    
+                    <h3>Essential Memorization Techniques</h3>
+                    <h4>1. Repetition Method</h4>
+                    <p>Read the same verse multiple times until it's firmly memorized before moving to the next.</p>
+                    
+                    <h4>2. Audio-Visual Learning</h4>
+                    <p>Listen to recitations while following along with the text to strengthen memory retention.</p>
+                    
+                    <h4>3. Chunking Strategy</h4>
+                    <p>Break down longer passages into smaller, manageable chunks for easier memorization.</p>
+                    
+                    <h4>4. Regular Review</h4>
+                    <p>Review previously memorized portions daily to prevent forgetting.</p>
+                    
+                    <h3>Advanced Techniques</h3>
+                    <ol>
+                        <li><strong>Understanding First</strong> - Understand the meaning before memorizing</li>
+                        <li><strong>Consistent Schedule</strong> - Set aside dedicated time daily</li>
+                        <li><strong>Proper Environment</strong> - Choose a quiet, distraction-free space</li>
+                        <li><strong>Mental Visualization</strong> - Picture the words in your mind</li>
+                        <li><strong>Recitation Practice</strong> - Recite aloud to reinforce memory</li>
+                    </ol>
+                    
+                    <h3>Common Mistakes to Avoid</h3>
+                    <ul>
+                        <li>Rushing through verses without proper memorization</li>
+                        <li>Neglecting daily review of previous portions</li>
+                        <li>Memorizing without understanding the meaning</li>
+                        <li>Not seeking guidance from qualified teachers</li>
+                    </ul>
+                    
+                    <p><em>"And We have certainly made the Quran easy for remembrance, so is there any who will remember?"</em> - Quran 54:17</p>
+                `
+            },
+            {
+                id: 'blog5',
+                title: 'How Learning Arabic Transforms Your Quran Experience',
+                category: 'Arabic Language',
+                date: 'March 5, 2024',
+                icon: 'fas fa-language',
+                tags: ['arabic-language', 'quran-learning', 'islamic-education'],
+                excerpt: 'Unlock deeper understanding of the Quran through Arabic language mastery. Discover how knowing Arabic enriches your spiritual connection and prayer experience.',
+                content: `
+                    <h2>How Learning Arabic Transforms Your Quran Experience</h2>
+                    <p>Learning Arabic is not just about understanding the Quran's literal meaning—it's about connecting with the divine message on a deeper, more profound level.</p>
+                    
+                    <h3>Why Arabic Matters</h3>
+                    <h4>1. Direct Connection</h4>
+                    <p>Reading the Quran in its original language creates a direct connection with Allah's words, without the filter of translation.</p>
+                    
+                    <h4>2. Nuanced Understanding</h4>
+                    <p>Arabic's rich vocabulary and grammar reveal subtle meanings that translations often miss.</p>
+                    
+                    <h4>3. Enhanced Prayer Experience</h4>
+                    <p>Understanding Arabic makes your prayers more meaningful and spiritually fulfilling.</p>
+                    
+                    <h3>Getting Started with Arabic</h3>
+                    <h4>Basic Steps</h4>
+                    <ol>
+                        <li>Learn the Arabic alphabet and pronunciation</li>
+                        <li>Study basic grammar and sentence structure</li>
+                        <li>Build vocabulary with common Quranic words</li>
+                        <li>Practice reading and writing regularly</li>
+                    </ol>
+                    
+                    <h3>Recommended Learning Resources</h3>
+                    <ul>
+                        <li>Online Arabic courses specifically for Quran study</li>
+                        <li>Mobile apps for vocabulary building</li>
+                        <li>Arabic grammar books for beginners</li>
+                        <li>Practice with native speakers</li>
+                    </ul>
+                    
+                    <p><em>"We have sent it down as an Arabic Quran so that you may understand."</em> - Quran 12:2</p>
+                `
+            },
+            {
+                id: 'blog6',
+                title: 'Why Online Quran Classes Are More Effective Than Traditional Methods',
+                category: 'Online Learning',
+                date: 'March 3, 2024',
+                icon: 'fas fa-laptop',
+                tags: ['online-learning', 'islamic-education', 'quran-learning'],
+                excerpt: 'Explore the advantages of digital Quran education including personalized attention, flexible scheduling, and access to qualified teachers worldwide.',
+                content: `
+                    <h2>Why Online Quran Classes Are More Effective Than Traditional Methods</h2>
+                    <p>The digital revolution has transformed how we learn, and Quran education is no exception. Online Quran classes offer numerous advantages that make them more effective than traditional methods.</p>
+                    
+                    <h3>Key Advantages of Online Learning</h3>
+                    <h4>1. Personalized Attention</h4>
+                    <p>One-on-one sessions allow for customized learning plans tailored to individual needs and learning styles.</p>
+                    
+                    <h4>2. Flexible Scheduling</h4>
+                    <p>Learn at your own pace and schedule sessions that fit your lifestyle and commitments.</p>
+                    
+                    <h4>3. Access to Qualified Teachers</h4>
+                    <p>Connect with expert teachers from around the world, regardless of geographical location.</p>
+                    
+                    <h4>4. Interactive Technology</h4>
+                    <p>Modern tools like screen sharing, digital whiteboards, and recording capabilities enhance the learning experience.</p>
+                    
+                    <h3>Technology-Enhanced Learning</h3>
+                    <ul>
+                        <li>Screen sharing for visual learning</li>
+                        <li>Audio and video recording for review</li>
+                        <li>Digital Quran with highlighting features</li>
+                        <li>Instant feedback and correction</li>
+                        <li>Progress tracking and assessment</li>
+                    </ul>
+                    
+                    <h3>Overcoming Common Concerns</h3>
+                    <p><strong>Concern:</strong> Lack of personal interaction<br>
+                    <strong>Solution:</strong> Video conferencing provides face-to-face interaction</p>
+                    
+                    <p><strong>Concern:</strong> Technical difficulties<br>
+                    <strong>Solution:</strong> User-friendly platforms and technical support</p>
+                    
+                    <p><strong>Concern:</strong> Distractions at home<br>
+                    <strong>Solution:</strong> Dedicated learning space and time management</p>
+                `
+            },
+            {
+                id: 'blog7',
+                title: 'Common Tajweed Mistakes and How to Avoid Them',
+                category: 'Tajweed',
+                date: 'March 1, 2024',
+                icon: 'fas fa-volume-up',
+                tags: ['tajweed', 'quran-recitation', 'islamic-education'],
+                excerpt: 'Learn about the most frequent pronunciation errors in Quran recitation and practical tips to correct them. Improve your Tajweed with expert guidance.',
+                content: `
+                    <h2>Common Tajweed Mistakes and How to Avoid Them</h2>
+                    <p>Even experienced reciters can make Tajweed mistakes. Understanding common errors and how to correct them is essential for improving your Quran recitation.</p>
+                    
+                    <h3>Most Common Tajweed Mistakes</h3>
+                    <h4>1. Incorrect Makharij (Points of Articulation)</h4>
+                    <p>Many learners struggle with throat letters (خ، غ، ح، ع) and heavy letters (ص، ض، ط، ظ، غ، ق).</p>
+                    
+                    <h4>2. Improper Elongation (Madd)</h4>
+                    <p>Not observing the required elongation for certain letters and combinations.</p>
+                    
+                    <h4>3. Incorrect Stopping Rules (Waqf)</h4>
+                    <p>Stopping inappropriately or not stopping where required.</p>
+                    
+                    <h4>4. Mixing Heavy and Light Letters</h4>
+                    <p>Not distinguishing between heavy (تفخيم) and light (ترقيق) letters.</p>
+                    
+                    <h3>How to Correct These Mistakes</h3>
+                    <ol>
+                        <li><strong>Practice with Audio</strong> - Listen to expert reciters</li>
+                        <li><strong>Record Yourself</strong> - Compare with correct recitation</li>
+                        <li><strong>Learn from a Teacher</strong> - Get personalized feedback</li>
+                        <li><strong>Practice Regularly</strong> - Consistency is key</li>
+                    </ol>
+                    
+                    <h3>Prevention Strategies</h3>
+                    <ul>
+                        <li>Start with basic rules before advanced ones</li>
+                        <li>Practice one rule at a time</li>
+                        <li>Use visual aids and charts</li>
+                        <li>Join Tajweed classes or workshops</li>
+                    </ul>
+                    
+                    <p><em>"And recite the Quran with measured recitation."</em> - Quran 73:4</p>
+                `
+            },
+            {
+                id: 'blog8',
+                title: 'Building a Stronger Connection with Allah Through Quran',
+                category: 'Spiritual Growth',
+                date: 'February 28, 2024',
+                icon: 'fas fa-heart',
+                tags: ['spiritual-growth', 'quran', 'islamic-values', 'prayer'],
+                excerpt: 'Practical steps to deepen your relationship with Allah through meaningful Quran study, reflection, and implementation of Islamic teachings in daily life.',
+                content: `
+                    <h2>Building a Stronger Connection with Allah Through Quran</h2>
+                    <p>The Quran is not just a book to be read—it's a guide for life and a means to strengthen our relationship with Allah. Here are practical ways to deepen your connection through Quran study.</p>
+                    
+                    <h3>Understanding vs. Just Reading</h3>
+                    <p>Reading the Quran with understanding transforms it from mere recitation to a meaningful spiritual experience. Take time to reflect on the meanings and their application in your life.</p>
+                    
+                    <h3>Practical Steps for Deeper Connection</h3>
+                    <h4>1. Daily Reflection</h4>
+                    <p>Set aside time each day to read and reflect on Quranic verses. Consider their meaning and how they apply to your daily life.</p>
+                    
+                    <h4>2. Memorization with Understanding</h4>
+                    <p>Memorize verses while understanding their meaning. This creates a deeper connection and makes the words more meaningful.</p>
+                    
+                    <h4>3. Implementation in Daily Life</h4>
+                    <p>Apply Quranic teachings in your daily interactions, decisions, and behavior.</p>
+                    
+                    <h4>4. Regular Prayer and Supplication</h4>
+                    <p>Use Quranic verses in your prayers and supplications to strengthen your spiritual connection.</p>
+                    
+                    <h3>Creating a Sacred Space</h3>
+                    <ul>
+                        <li>Designate a quiet area for Quran study</li>
+                        <li>Keep the space clean and organized</li>
+                        <li>Use comfortable seating and good lighting</li>
+                        <li>Minimize distractions during study time</li>
+                    </ul>
+                    
+                    <h3>Building a Routine</h3>
+                    <ol>
+                        <li>Start with short, manageable sessions</li>
+                        <li>Gradually increase study time</li>
+                        <li>Be consistent with your schedule</li>
+                        <li>Track your progress and celebrate achievements</li>
+                    </ol>
+                    
+                    <p><em>"This is the Book about which there is no doubt, a guidance for those conscious of Allah."</em> - Quran 2:2</p>
+                `
+            }
+        ];
+
+        // Blog modal functionality (global functions)
+        function openBlogModal(blogId) {
+            const post = blogPosts.find(post => post.id === blogId);
+            if (post) {
+                document.getElementById('modalTitle').textContent = post.title;
+                document.getElementById('modalMeta').textContent = `${post.category} • ${post.date}`;
+                document.getElementById('modalBody').innerHTML = post.content;
+                document.getElementById('blogModal').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                console.error(`Blog post with id '${blogId}' not found`);
+            }
+        }
+
+        function closeBlogModal() {
+            document.getElementById('blogModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Tag filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tagCloud = document.getElementById('tagCloud');
+            const blogGrid = document.querySelector('.blog-grid');
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            // Add click event listeners to tags
+            tagCloud.addEventListener('click', function(e) {
+                if (e.target.classList.contains('tag')) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all tags
+                    document.querySelectorAll('.tag').forEach(tag => {
+                        tag.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked tag
+                    e.target.classList.add('active');
+                    
+                    const selectedTag = e.target.getAttribute('data-tag');
+                    
+                    // Filter blog cards based on selected tag
+                    blogCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        
+                        if (selectedTag === 'all' || cardCategory === selectedTag) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.6s ease';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    
+                    // Update results count
+                    const visibleCards = document.querySelectorAll('.blog-card[style*="display: block"], .blog-card:not([style*="display: none"])');
+                    updateResultsCount(visibleCards.length);
+                }
+            });
+            
+            // Function to update results count
+            function updateResultsCount(count) {
+                const blogHeader = document.querySelector('.blog-header h1');
+                if (blogHeader) {
+                    const originalText = 'Islamic Knowledge Blog';
+                    blogHeader.textContent = `${originalText} (${count} articles)`;
+                }
+                
+                // Add visual feedback for no results
+                const noResultsMessage = document.querySelector('.no-results-message');
+                if (count === 0) {
+                    if (!noResultsMessage) {
+                        const message = document.createElement('div');
+                        message.className = 'no-results-message';
+                        message.innerHTML = `
+                            <div style="text-align: center; padding: 2rem; color: #666;">
+                                <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; color: #ccc;"></i>
+                                <h3>No articles found</h3>
+                                <p>Try selecting a different tag or browse all articles.</p>
+                            </div>
+                        `;
+                        blogGrid.appendChild(message);
+                    }
+                } else {
+                    if (noResultsMessage) {
+                        noResultsMessage.remove();
+                    }
+                }
+            }
+            
+            // Initialize with all posts visible
+            updateResultsCount(blogCards.length);
+        });
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('blogModal');
+            if (e.target === modal) {
+                closeBlogModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeBlogModal();
+            }
+        });
+    </script>
+
