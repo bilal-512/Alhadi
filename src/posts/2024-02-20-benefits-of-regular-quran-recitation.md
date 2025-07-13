@@ -5,8 +5,8 @@ description: "Discover the profound benefits of daily Quran recitation, from spi
 category: "Spiritual Growth"
 date: 2024-02-20
 icon: "fas fa-heart"
-tags: ["Quran", "Spiritual Growth", "Mental Health", "Daily Practice"]
-image: "/islamic.png"
+tags: ["quran", "spiritual-growth", "mental-health", "daily-practice"]
+image: "https://quraniciq.com/images/islamic.png"
 author: "Quranic IQ Center"
 ---
 

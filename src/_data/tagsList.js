@@ -19,12 +19,13 @@ module.exports = function() {
       const content = fs.readFileSync(path.join(postsDir, file), "utf8");
       const match = content.match(/tags:\s*\[(.*?)\]/s);
       if (match) {
-        const tags = match[1].split(",").map(t => t.replace(/['"\s]/g, "")).filter(Boolean);
+        const tags = match[1].split(",").map(t => t.replace(/['"\s]/g, "").toLowerCase()).filter(Boolean);
         tags.forEach(tag => {
-          if (tag !== "post" && tag !== "tagPage") tagSet.add(slugify(tag));
+          if (tag !== "post" && tag !== "tagpage") tagSet.add(slugify(tag));
         });
       }
     }
   });
-  return Array.from(tagSet);
+  // Remove any duplicate slugs just in case
+  return Array.from(new Set(Array.from(tagSet)));
 }; 

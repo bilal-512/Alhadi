@@ -1,8 +1,33 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require("markdown-it");
 const markdownItAttrs = require("markdown-it-attrs");
+const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = function(eleventyConfig) {
+  // Add extractHeadings filter
+  eleventyConfig.addFilter("extractHeadings", function(content) {
+    // Extracts all Markdown or HTML headings (h1-h6) from content and generates anchor IDs
+    const headings = [];
+    // HTML headings
+    for (const m of String(content).matchAll(/<h([1-6])[^>]*>(.*?)<\/h\1>/gi)) {
+      const text = m[2].replace(/<[^>]+>/g, "").trim();
+      const id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+      headings.push({ text, id, level: m[1] });
+    }
+    // Markdown headings
+    for (const m of String(content).matchAll(/^#{1,6} (.*)$/gm)) {
+      const text = m[1].trim();
+      const id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+      // Level is not available for markdown, default to 2
+      headings.push({ text, id, level: 2 });
+    }
+    return headings;
+  });
+  // Add hasHeadings filter
+  eleventyConfig.addFilter("hasHeadings", function(content) {
+    // Checks for at least one Markdown or HTML heading (h1-h6)
+    return /<h[1-6][^>]*>|^# .+/m.test(content);
+  });
   // Add RSS plugin
   eleventyConfig.addPlugin(pluginRss);
 
@@ -13,7 +38,12 @@ module.exports = function(eleventyConfig) {
     linkify: true
   };
 
-  const md = markdownIt(markdownItOptions).use(markdownItAttrs);
+  const md = markdownIt(markdownItOptions)
+    .use(markdownItAttrs)
+    .use(markdownItAnchor, {
+      permalink: false,
+      slugify: s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""),
+    });
   eleventyConfig.setLibrary("md", md);
 
   // Copy static files

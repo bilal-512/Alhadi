@@ -5,8 +5,8 @@ description: "Master the fundamental Tajweed rules to improve your Quran recitat
 category: "Tajweed"
 date: 2024-02-25
 icon: "fas fa-microphone"
-tags: ["Tajweed", "Quran Recitation", "Arabic Pronunciation", "Islamic Learning"]
-image: "/arabic.png"
+tags: ["tajweed", "quran-recitation", "arabic-pronunciation", "islamic-learning"]
+image: "https://quraniciq.com/images/arabic.png"
 author: "Quranic IQ Center"
 ---
 

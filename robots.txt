@@ -3,16 +3,10 @@ Allow: /
 
 # Disallow specific file types that shouldn't be indexed
 Disallow: /*.css$
-Disallow: /*.js$
-Disallow: /*.png$
-Disallow: /*.jpg$
-Disallow: /*.jpeg$
-Disallow: /*.gif$
-Disallow: /*.svg$
-Disallow: /*.pdf$
-Disallow: /*.zip$
-Disallow: /*.rar$
-
+Disallow: /_site/
+Disallow: /blogposts/
+Allow: /
+Sitemap: https://quraniciq.com/sitemap.xml
 
 
 # Allow important directories
@@ -21,7 +15,6 @@ Allow: /assets/
 Allow: /css/
 Allow: /js/
 
-# Sitemap location
 Sitemap: https://quraniciq.com/sitemap.xml
 
 # Crawl delay (helps with server load)

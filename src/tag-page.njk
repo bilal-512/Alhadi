@@ -1,10 +1,11 @@
 ---
 pagination:
-  data: tagsList
+  data: collections.tag
   size: 1
   alias: tag
-permalink: "/blog/tag/{{ tag | slug }}/index.html"
+  filter: tag => tag && tag !== "all"
+permalink: "/blog/tag/{{ tag }}/index.html"
 layout: layouts/tag.njk
 eleventyComputed:
   title: "Posts tagged with '{{ tag }}'"
---- 
+---

@@ -7,7 +7,7 @@ author: "Quranic IQ Center"
 category: "Quran Learning"
 tags: ["tajweed", "quran-recitation", "islamic-education", "pronunciation"]
 icon: "fas fa-book-quran"
-image: "/religion.png"
+image: "https://quraniciq.com/images/religion.png"
 ---
 
 # The Importance of Learning Quran with Tajweed

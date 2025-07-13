@@ -66,7 +66,10 @@ templateClass: post
     <!-- Table of Contents -->
     {% if content | hasHeadings %}
     <div class="table-of-contents">
-        <h3><i class="fas fa-list"></i> Table of Contents</h3>
+        <h3 class="toc-toggle" onclick="document.querySelector('.table-of-contents').classList.toggle('collapsed')">
+            <i class="fas fa-list"></i> Table of Contents
+            <span class="toc-arrow">&#9660;</span>
+        </h3>
         <nav class="toc-nav">
             <ul>
                 {% for heading in content | extractHeadings %}
@@ -77,6 +80,14 @@ templateClass: post
             </ul>
         </nav>
     </div>
+    <script>
+      // Collapse TOC on mobile by default
+      if(window.innerWidth < 768) {
+        document.addEventListener('DOMContentLoaded', function() {
+          document.querySelector('.table-of-contents').classList.add('collapsed');
+        });
+      }
+    </script>
     {% endif %}
 
     <!-- Post Content -->
@@ -110,8 +121,8 @@ templateClass: post
                 <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}" target="_blank" class="share-btn linkedin">
                     <i class="fab fa-linkedin-in"></i> LinkedIn
                 </a>
-                <a href="https://wa.me/?text={{ title | urlencode }}%20{{ site.url }}{{ page.url }}" target="_blank" class="share-btn whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+                <a href="https://wa.me/?text={{ title | urlencode }}%20{{ site.url }}{{ page.url }}" target="_blank" class="share-btn whatsapp-share">
+                    <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
         </div>

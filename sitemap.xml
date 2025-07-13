@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://quraniciq.com/</loc>
-    <lastmod>2025-07-11</lastmod>
+    <lastmod>2025-07-13</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -13,51 +13,51 @@
   <!-- Main Pages -->
   <url>
     <loc>https://quraniciq.com/courses.html</loc>
-    <lastmod>2025-07-11</lastmod>
+    <lastmod>2025-07-13</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://quraniciq.com/register.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-07-13</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://quraniciq.com/contact.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-07-13</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://quraniciq.com/downloads.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-07-13</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <!-- Internal Sections (Single Page Anchors) -->
   <url>
-    <loc>https://quraniciq.com/#home</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://quraniciq.com/blog.html</loc>
+    <lastmod>2025-07-13</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://quraniciq.com/#courses</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://quraniciq.com/#home</loc>
+    <lastmod>2025-07-13</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://quraniciq.com/#about</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://quraniciq.com/#courses</loc>
+    <lastmod>2025-07-13</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://quraniciq.com/#fee</loc>
-    <lastmod>2025-01-27</lastmod>
+    <loc>https://quraniciq.com/#about</loc>
+    <lastmod>2025-07-13</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
