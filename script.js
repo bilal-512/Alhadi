@@ -238,3 +238,154 @@ document.querySelectorAll('.faq-question').forEach(question => {
         this.setAttribute('aria-expanded', isExpanded);
     });
 });
+
+// ===== Blog Page Functionality =====
+
+// Category filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Remove active class from all buttons
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const selectedCategory = this.getAttribute('href').split('/').pop();
+            
+            // Filter blog cards
+            blogCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                
+                if (selectedCategory === 'blog' || selectedCategory === cardCategory) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease-in-out';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Update URL without page reload
+            if (selectedCategory !== 'blog') {
+                history.pushState(null, '', `/blog/category/${selectedCategory}`);
+            } else {
+                history.pushState(null, '', '/blog');
+            }
+        });
+    });
+    
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', function() {
+        const path = window.location.pathname;
+        const category = path.split('/').pop();
+        
+        // Update active button
+        categoryButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('href').includes(category)) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Filter cards accordingly
+        blogCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            
+            if (category === 'blog' || category === cardCategory) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Blog card hover effects
+document.addEventListener('DOMContentLoaded', function() {
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    blogCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px)';
+            this.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.15)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.08)';
+        });
+    });
+});
+
+// Search functionality for blog
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('.blog-search input');
+    const blogCards = document.querySelectorAll('.blog-card');
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            blogCards.forEach(card => {
+                const title = card.querySelector('.blog-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.blog-excerpt').textContent.toLowerCase();
+                const category = card.querySelector('.blog-category').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm) || category.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.3s ease-in-out';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    }
+});
+
+// Lazy loading for blog images
+document.addEventListener('DOMContentLoaded', function() {
+    const blogImages = document.querySelectorAll('.blog-image');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.style.opacity = '1';
+                img.style.transform = 'scale(1)';
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    blogImages.forEach(img => {
+        img.style.opacity = '0';
+        img.style.transform = 'scale(0.9)';
+        img.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        imageObserver.observe(img);
+    });
+});
+
+// Add CSS animation for fadeIn
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .blog-card {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+`;
+document.head.appendChild(style);

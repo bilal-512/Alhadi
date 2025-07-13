@@ -1,0 +1,18 @@
+{
+  "title": "Quranic IQ Center",
+  "description": "Comprehensive Islamic education resources covering all aspects of Quran learning, Tajweed mastery, and spiritual guidance",
+  "keywords": "Islamic blog, Quran learning articles, Tajweed guides, Islamic education, Quran memorization tips, Islamic knowledge, online Quran classes, Islamic spirituality",
+  "author": "Quranic IQ Center",
+  "url": "https://quraniciq.com",
+  "logo": "https://ihadi.weebly.com/uploads/1/0/1/9/101906034/published/logo.png?1512313999",
+  "currentYear": 2024,
+  "social": {
+    "facebook": "#",
+    "twitter": "#",
+    "instagram": "#",
+    "youtube": "#"
+  },
+  "defaultImage": "/images/blog-default.jpg",
+  "ogImage": "/images/blog-og-image.jpg",
+  "twitterImage": "/images/blog-twitter-image.jpg"
+}

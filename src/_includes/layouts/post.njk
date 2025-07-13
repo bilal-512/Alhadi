@@ -1,0 +1,191 @@
+---
+layout: base
+templateClass: post
+---
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ title }}",
+  "description": "{{ description }}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ site.author }}",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.logo }}"
+    }
+  },
+  "datePublished": "{{ date | dateFormat }}",
+  "dateModified": "{{ date | dateFormat }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ site.url }}{{ image or '/images/blog-default.jpg' }}"
+  },
+  "keywords": "{{ tags | join(', ') }}",
+  "articleSection": "{{ category }}"
+}
+</script>
+
+<div class="post-page">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <a href="/">Home</a>
+        <span>></span>
+        <a href="/blog">Blog</a>
+        <span>></span>
+        <span>{{ title }}</span>
+    </div>
+
+    <!-- Post Header -->
+    <div class="post-header">
+        <div class="post-meta">
+            <span class="post-category">{{ category }}</span>
+            <span><i class="fas fa-calendar"></i> {{ date | dateFormat }}</span>
+            <span><i class="fas fa-user"></i> {{ author or site.author }}</span>
+            <span><i class="fas fa-clock"></i> {{ content | readingTime }} min read</span>
+            {% if lastUpdated %}
+            <span><i class="fas fa-edit"></i> Updated: {{ lastUpdated | dateFormat }}</span>
+            {% endif %}
+        </div>
+        <h1 class="post-title">{{ title }}</h1>
+        <p class="post-excerpt">{{ description }}</p>
+    </div>
+
+    <!-- Table of Contents -->
+    {% if content | hasHeadings %}
+    <div class="table-of-contents">
+        <h3><i class="fas fa-list"></i> Table of Contents</h3>
+        <nav class="toc-nav">
+            <ul>
+                {% for heading in content | extractHeadings %}
+                <li class="toc-item toc-{{ heading.level }}">
+                    <a href="#{{ heading.id }}">{{ heading.text }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
+
+    <!-- Post Content -->
+    <div class="post-content-wrapper">
+        <article class="post-content">
+            {{ content | safe }}
+        </article>
+
+        <!-- Post Tags -->
+        {% if tags %}
+        <div class="post-tags">
+            <h4>Tags:</h4>
+            {% for tag in tags %}
+            {% if tag != "posts" %}
+            <a href="/blog/tag/{{ tag | slug }}" class="tag">{{ tag }}</a>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Social Sharing -->
+        <div class="social-sharing">
+            <h4>Share this article:</h4>
+            <div class="share-buttons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" target="_blank" class="share-btn facebook">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="https://twitter.com/intent/tweet?text={{ title | urlencode }}&url={{ site.url }}{{ page.url }}" target="_blank" class="share-btn twitter">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}" target="_blank" class="share-btn linkedin">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
+                <a href="https://wa.me/?text={{ title | urlencode }}%20{{ site.url }}{{ page.url }}" target="_blank" class="share-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Related Posts -->
+        {% set relatedPosts = collections.posts | filterByCategory(category) | slice(0, 3) %}
+        {% if relatedPosts.length > 1 %}
+        <div class="related-posts">
+            <h4>Related Articles</h4>
+            <div class="related-posts-grid">
+                {% for post in relatedPosts %}
+                {% if post.url != page.url %}
+                <div class="related-post-item">
+                    <h5>{{ post.data.title }}</h5>
+                    <a href="{{ post.url }}">Read More</a>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Navigation -->
+        <nav class="post-navigation">
+            <div class="nav-links">
+                {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+                {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+                
+                {% if previousPost %}
+                <div class="nav-previous">
+                    <a href="{{ previousPost.url }}">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>{{ previousPost.data.title }}</span>
+                    </a>
+                </div>
+                {% endif %}
+                
+                {% if nextPost %}
+                <div class="nav-next">
+                    <a href="{{ nextPost.url }}">
+                        <span>{{ nextPost.data.title }}</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="post-sidebar">
+        <!-- Popular Posts -->
+        <div class="popular-posts-sidebar">
+            <h3>Most Popular Articles</h3>
+            {% set popularPosts = collections.posts | slice(0, 4) %}
+            {% for post in popularPosts %}
+            <div class="popular-post">
+                <div class="popular-post-number">{{ loop.index }}</div>
+                <div class="popular-post-content">
+                    <h4>{{ post.data.title }}</h4>
+                    <a href="{{ post.url }}">Read Article</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Categories -->
+        <div class="tags-section">
+            <h3>Browse by Category</h3>
+            <div class="tag-cloud">
+                {% for category in collections.categories %}
+                <a href="/blog/category/{{ category | slug }}" class="tag">{{ category }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

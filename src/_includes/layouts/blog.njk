@@ -1,0 +1,86 @@
+---
+layout: base
+templateClass: blog
+---
+
+<div class="blog-container">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <a href="/">Home</a>
+        <span>></span>
+        <span>Blog</span>
+    </div>
+
+    <!-- Blog Header -->
+    <div class="blog-header">
+        <h1>Islamic Knowledge & Guidance Blog</h1>
+        <p>Explore comprehensive articles about Quran learning, Tajweed mastery, Islamic teachings, and spiritual guidance to enhance your faith journey with expert insights and practical tips.</p>
+    </div>
+
+    <!-- Search and Filter Section -->
+    <div class="blog-search-filter">
+        <div class="search-section">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search articles..." class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="categories-filter">
+            <h3>Browse by Category</h3>
+            <div class="category-buttons">
+                <a href="/blog" class="category-btn {% if not category %}active{% endif %}">All Articles</a>
+                {% for cat in collections.categories %}
+                <a href="/blog/category/{{ cat | slug }}" class="category-btn {% if category == cat %}active{% endif %}">{{ cat }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Layout -->
+    <div class="main-content">
+        <!-- Content Area -->
+        <div class="content-area">
+            {{ content | safe }}
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Popular Posts -->
+            <div class="popular-posts-sidebar">
+                <h3>Most Popular Articles</h3>
+                {% set popularPosts = collections.posts | slice(0, 4) %}
+                {% for post in popularPosts %}
+                <div class="popular-post">
+                    <div class="popular-post-number">{{ loop.index }}</div>
+                    <div class="popular-post-content">
+                        <h4>{{ post.data.title }}</h4>
+                        <a href="{{ post.url }}">Read Article</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Tags -->
+            <div class="tags-section">
+                <h3>Browse by Tags</h3>
+                <div class="tag-cloud">
+                    {% for category in collections.categories %}
+                    <a href="/blog/category/{{ category | slug }}" class="tag">{{ category }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEO Content Section -->
+    <div class="seo-content">
+        <h2>Your Complete Guide to Islamic Learning</h2>
+        <p>At Quranic IQ, we provide comprehensive Islamic education resources covering all aspects of Quran learning, from basic Arabic alphabet to advanced Tajweed rules and complete Hifz programs. Our expert-written articles offer practical guidance for students, parents, and Islamic education enthusiasts worldwide.</p>
+        <p>Whether you're looking to start learning Quran online, improve your Tajweed pronunciation, or find effective memorization techniques, our blog provides evidence-based strategies and time-tested methods used by successful Islamic scholars and teachers.</p>
+    </div>
+</div>
+<!-- End of .blog-container: Footer will appear after this div -->

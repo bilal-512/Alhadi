@@ -1,0 +1,112 @@
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const markdownIt = require("markdown-it");
+const markdownItAttrs = require("markdown-it-attrs");
+
+module.exports = function(eleventyConfig) {
+  // Add RSS plugin
+  eleventyConfig.addPlugin(pluginRss);
+
+  // Configure Markdown
+  const markdownItOptions = {
+    html: true,
+    breaks: true,
+    linkify: true
+  };
+
+  const md = markdownIt(markdownItOptions).use(markdownItAttrs);
+  eleventyConfig.setLibrary("md", md);
+
+  // Copy static files
+  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("style.css");
+  eleventyConfig.addPassthroughCopy("script.js");
+  eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addPassthroughCopy("*.jpg");
+  eleventyConfig.addPassthroughCopy("*.png");
+  eleventyConfig.addPassthroughCopy("*.svg");
+  eleventyConfig.addPassthroughCopy("*.html");
+
+  // Add date filter
+  eleventyConfig.addFilter("dateFormat", function(date) {
+    return new Date(date).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  });
+
+  // Add excerpt filter
+  eleventyConfig.addFilter("excerpt", function(content) {
+    return content.substr(0, 150) + "...";
+  });
+
+  // Add reading time filter
+  eleventyConfig.addFilter("readingTime", function(content) {
+    const wordsPerMinute = 200;
+    const wordCount = content.split(' ').length;
+    const readingTime = Math.ceil(wordCount / wordsPerMinute);
+    return readingTime;
+  });
+
+  // Add category filter
+  eleventyConfig.addFilter("filterByCategory", function(posts, category) {
+    if (!category || category === "all") {
+      return posts;
+    }
+    return posts.filter(post => post.data.category === category);
+  });
+
+  // Add collection for blog posts
+  eleventyConfig.addCollection("posts", function(collection) {
+    return collection.getFilteredByGlob("src/posts/**/*.md").sort((a, b) => {
+      return new Date(b.data.date) - new Date(a.data.date);
+    });
+  });
+
+  // Add collection for categories
+  eleventyConfig.addCollection("categories", function(collection) {
+    const posts = collection.getFilteredByGlob("src/posts/**/*.md");
+    const categories = new Set();
+    
+    posts.forEach(post => {
+      if (post.data.category) {
+        categories.add(post.data.category);
+      }
+    });
+    
+    return Array.from(categories);
+  });
+
+  // Add tagsList data function
+  eleventyConfig.addGlobalData("tagsList", function() {
+    return ["Quran", "Spiritual Growth", "Mental Health", "Daily Practice", "Tajweed", "Quran Recitation", "Arabic Pronunciation", "Islamic Learning", "tajweed", "quran-recitation", "islamic-education", "pronunciation"];
+  });
+
+  eleventyConfig.addFilter("getAllTags", function(collection) {
+    let tagSet = new Set();
+    collection.getAll().forEach(item => {
+      if (item.data.tags) {
+        let tags = Array.isArray(item.data.tags) ? item.data.tags : [item.data.tags];
+        tags.forEach(tag => {
+          if (tag !== "post" && tag !== "tagPage") {
+            tagSet.add(tag);
+          }
+        });
+      }
+    });
+    return Array.from(tagSet);
+  });
+
+  return {
+    dir: {
+      input: "src",
+      output: "_site",
+      includes: "_includes",
+      layouts: "_includes/layouts"
+    },
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk"
+  };
+};

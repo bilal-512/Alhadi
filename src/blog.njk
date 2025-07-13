@@ -1,0 +1,73 @@
+---
+layout: blog
+title: Islamic Knowledge Blog
+description: Explore comprehensive articles about Quran learning, Tajweed mastery, Islamic teachings, and spiritual guidance
+keywords: Islamic blog, Quran learning articles, Tajweed guides, Islamic education, Quran memorization tips
+pagination:
+  data: collections.posts
+  size: 9
+  alias: posts
+---
+
+<!-- Blog Grid -->
+<div class="blog-grid">
+    {% for post in posts %}
+    <article class="blog-card" data-category="{{ post.data.category | slug }}">
+        <div class="blog-image">
+            {% if post.data.icon %}
+            <i class="{{ post.data.icon }}"></i>
+            {% else %}
+            <i class="fas fa-book-quran"></i>
+            {% endif %}
+        </div>
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">{{ post.data.category }}</span>
+                <span><i class="fas fa-calendar"></i> {{ post.data.date | dateFormat }}</span>
+            </div>
+            <h3 class="blog-title">
+                <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </h3>
+            <p class="blog-excerpt">{{ post.data.description or (post.templateContent | striptags | excerpt) }}</p>
+            <a href="{{ post.url }}" class="blog-read-more">Read Complete Guide <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+
+<!-- Pagination -->
+{% if pagination.pages.length > 1 %}
+<nav class="pagination">
+    {% if pagination.previousPageHref %}
+    <a href="{{ pagination.previousPageHref }}" class="pagination-prev">
+        <i class="fas fa-arrow-left"></i> Previous
+    </a>
+    {% endif %}
+    
+    <span class="pagination-info">
+        Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}
+    </span>
+    
+    {% if pagination.nextPageHref %}
+    <a href="{{ pagination.nextPageHref }}" class="pagination-next">
+        Next <i class="fas fa-arrow-right"></i>
+    </a>
+    {% endif %}
+</nav>
+{% endif %}
+
+<div class="tag-cloud" id="tagCloud">
+    <a href="/blog.html" class="tag active" data-tag="all">All Posts</a>
+    <a href="/blog/tag/tajweed/" class="tag" data-tag="tajweed">Tajweed</a>
+    <a href="/blog/tag/quran-learning/" class="tag" data-tag="quran-learning">Quran Learning</a>
+    <a href="/blog/tag/spiritual-growth/" class="tag" data-tag="spiritual-growth">Spiritual Growth</a>
+    <a href="/blog/tag/memorization/" class="tag" data-tag="memorization">Memorization</a>
+    <a href="/blog/tag/islamic-education/" class="tag" data-tag="islamic-education">Islamic Education</a>
+    <a href="/blog/tag/kids-classes/" class="tag" data-tag="kids-classes">Kids Classes</a>
+    <a href="/blog/tag/online-learning/" class="tag" data-tag="online-learning">Online Learning</a>
+    <a href="/blog/tag/arabic-language/" class="tag" data-tag="arabic-language">Arabic Language</a>
+    <a href="/blog/tag/prayer/" class="tag" data-tag="prayer">Prayer</a>
+    <a href="/blog/tag/islamic-values/" class="tag" data-tag="islamic-values">Islamic Values</a>
+    <a href="/blog/tag/hifz/" class="tag" data-tag="hifz">Hifz</a>
+    <a href="/blog/tag/quran-recitation/" class="tag" data-tag="quran-recitation">Quran Recitation</a>
+</div>
