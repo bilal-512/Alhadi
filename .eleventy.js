@@ -49,6 +49,21 @@ module.exports = function(eleventyConfig) {
     return readingTime;
   });
 
+  // Add slug filter
+  eleventyConfig.addFilter("slug", function(str) {
+    return String(str)
+      .toLowerCase()
+      .replace(/\s+/g, '-')           // Replace spaces with -
+      .replace(/[^a-z0-9\-]/g, '')    // Remove all non-alphanumeric except -
+      .replace(/-+/g, '-')             // Replace multiple - with single -
+      .replace(/^-+|-+$/g, '');        // Trim - from start/end
+  });
+
+  // Add striptags filter
+  eleventyConfig.addFilter("striptags", function(str) {
+    return String(str).replace(/<[^>]*>/g, '');
+  });
+
   // Add category filter
   eleventyConfig.addFilter("filterByCategory", function(posts, category) {
     if (!category || category === "all") {

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: layouts/post.njk
 title: "The Importance of Learning Quran with Tajweed"
 description: "Master the art of beautiful Quran recitation with proper Tajweed rules. Learn why correct pronunciation preserves the divine message and enhances spiritual connection."
 date: 2024-02-15

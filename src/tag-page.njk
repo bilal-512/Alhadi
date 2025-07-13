@@ -4,7 +4,7 @@ pagination:
   size: 1
   alias: tag
 permalink: "/blog/tag/{{ tag | slug }}/index.html"
-layout: tag.njk
+layout: layouts/tag.njk
 eleventyComputed:
   title: "Posts tagged with '{{ tag }}'"
 --- 

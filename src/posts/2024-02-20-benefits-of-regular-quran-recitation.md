@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: layouts/post.njk
 title: "The Spiritual and Mental Benefits of Regular Quran Recitation"
 description: "Discover the profound benefits of daily Quran recitation, from spiritual peace to improved memory and concentration. Learn practical tips for establishing a consistent recitation routine."
 category: "Spiritual Growth"

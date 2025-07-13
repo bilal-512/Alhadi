@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: layouts/post.njk
 title: "Essential Tajweed Rules Every Beginner Should Know"
 description: "Master the fundamental Tajweed rules to improve your Quran recitation. Learn about proper pronunciation, elongation, and stopping rules with practical examples."
 category: "Tajweed"
