@@ -2,6 +2,7 @@
 title: "The Importance of Learning Quran with Tajweed for Children"
 description: "Discover why teaching children Tajweed from an early age is crucial for fostering correct Quranic recitation, spiritual growth, and a deep connection to Islamic heritage. Includes links to Tajweed resources and related articles."
 category: "Islamic Education & Awareness"
+layout: layouts/post.njk
 date: 2025-07-14
 author: "Quranic IQ Center"
 tags: ["Tajweed", "Quran", "Children", "Islamic Education", "Learning Quran", "Spiritual Growth"]
@@ -76,5 +77,7 @@ Teaching Tajweed to children is an investment in their faith and future. By prio
 ---
 
 > 🌱 Start your child’s journey with Tajweed today. Share this post to help other parents and educators foster a love for the Quran in the next generation.
+
+*Need guidance? [Contact us](/contact) or [explore our Quran courses](/courses) to get started today!*
 
 ---
