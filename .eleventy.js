@@ -48,15 +48,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary("md", md);
 
   // Copy static files
-  eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("style.css");
   eleventyConfig.addPassthroughCopy("script.js");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("*.jpg");
   eleventyConfig.addPassthroughCopy("*.png");
   eleventyConfig.addPassthroughCopy("*.svg");
-  eleventyConfig.addPassthroughCopy("*.html");
 
   // Add date filter
   eleventyConfig.addFilter("dateFormat", function(date) {
@@ -100,7 +99,7 @@ module.exports = function(eleventyConfig) {
     if (!category || category === "all") {
       return posts;
     }
-    return posts.filter(post => post.data.category === category);
+    return posts.filter(post => post.data.tags && post.data.tags.includes(category));
   });
 
   // Add collection for blog posts
