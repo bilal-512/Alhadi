@@ -29,32 +29,73 @@
     <title>{% if title %}{{ title }} - {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ description or site.description }}">
     <meta name="keywords" content="{{ keywords or site.keywords }}">
-    <meta name="author" content="{{ site.author }}">
+    <meta name="author" content="{{ author or site.author }}">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="{% if title %}{{ title }} - {% endif %}{{ site.title }}">
     <meta property="og:description" content="{{ description or site.description }}">
     <meta property="og:type" content="{% if templateClass == 'post' %}article{% else %}website{% endif %}">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    <meta property="og:image" content="{{ site.url }}{{ image or '/images/blog-og-image.jpg' }}">
+    <meta property="og:image" content="{{ image or site.ogImage or site.defaultImage }}">
     <meta property="og:site_name" content="{{ site.title }}">
-    
+    {% if tags %}<meta property="og:keywords" content="{{ tags | join(', ') }}">{% endif %}
+    {% if date %}<meta property="article:published_time" content="{{ date }}">{% endif %}
+    {% if lastUpdated %}<meta property="article:modified_time" content="{{ lastUpdated }}">{% endif %}
+    {% if category %}<meta property="article:section" content="{{ category }}">{% endif %}
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% if title %}{{ title }} - {% endif %}{{ site.title }}">
     <meta name="twitter:description" content="{{ description or site.description }}">
-    <meta name="twitter:image" content="{{ site.url }}{{ image or '/images/blog-twitter-image.jpg' }}">
-    
+    <meta name="twitter:image" content="{{ image or site.twitterImage or site.defaultImage }}">
+    <meta name="twitter:site" content="@quraniciq">
+    <meta name="twitter:creator" content="@quraniciq">
+
+    <!-- JSON-LD Structured Data for Blog Posts -->
+    {% if templateClass == 'post' %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{ title }}",
+      "description": "{{ description or site.description }}",
+      "author": {
+        "@type": "Organization",
+        "name": "{{ author or site.author }}",
+        "url": "{{ site.url }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.title }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ site.logo }}"
+        }
+      },
+      "datePublished": "{{ date }}",
+      "dateModified": "{{ lastUpdated or date }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ site.url }}{{ page.url }}"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ image or site.ogImage or site.defaultImage }}"
+      },
+      "keywords": "{{ tags | join(', ') }}",
+      "articleSection": "{{ category }}"
+    }
+    </script>
+    {% endif %}
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <!-- CSS -->
-    <link rel="stylesheet" href="/style.css">
-    
+    <link rel="stylesheet" href="{{ '/style.css' | url }}">
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS Feed" href="{{ site.url }}/feed.xml">
 </head>

@@ -4,6 +4,7 @@ const markdownItAttrs = require("markdown-it-attrs");
 const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = function(eleventyConfig) {
+  // ...existing code...
   // Add extractHeadings filter
   eleventyConfig.addFilter("extractHeadings", function(content) {
     // Extracts all Markdown or HTML headings (h1-h6) from content and generates anchor IDs
