@@ -5,7 +5,9 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
+    "deploy": "npm run build && gh-pages -d _site",
     "clean": "rm -rf _site"
+    
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
