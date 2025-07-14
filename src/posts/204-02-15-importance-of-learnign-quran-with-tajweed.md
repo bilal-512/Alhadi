@@ -132,7 +132,7 @@ Begin your Tajweed journey with these simple steps:
 2. **Learn one rule at a time** - Don't overwhelm yourself
 3. **Practice with short surahs** - Build confidence gradually
 4. **Seek feedback** - Regular correction is essential
-5. **Stay consistent** - Even 15 minutes daily makes a difference
+5. **Stay consistent** - Even 15 minutes daily makes a difference in learnig quran
 
 ## Conclusion
 
@@ -145,3 +145,4 @@ Start today, be patient with yourself, and enjoy this beautiful journey of conne
 ---
 
 *Ready to begin your Tajweed journey? [Contact us](/contact) to learn about our online Tajweed classes with certified instructors, or explore our [Quran learning courses](/courses) designed for students of all levels.*
+contact us now we are ready to make imapct on your life and change life [visit our website](www.quraniciq.com)
