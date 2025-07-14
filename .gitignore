@@ -2,7 +2,7 @@
 node_modules/
 
 # Eleventy output
-_site/
+
 
 # OS generated files
 .DS_Store
