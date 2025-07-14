@@ -919,13 +919,40 @@ border-bottom: 1px solid #f0f0f0; /* subtle separation */
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    transform: translateY(-80px) scaleY(0.85) skewY(-8deg);
+    transition:
+      max-height 0.8s cubic-bezier(0.22, 1.5, 0.36, 1),
+      opacity 0.5s cubic-bezier(0.22, 1.5, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1.5, 0.36, 1);
+  }
+
+  @keyframes navBounce {
+    0% {
+      transform: translateY(-80px) scaleY(0.85) skewY(-8deg);
+      opacity: 0;
+    }
+    60% {
+      transform: translateY(10px) scaleY(1.08) skewY(2deg);
+      opacity: 1;
+    }
+    80% {
+      transform: translateY(-4px) scaleY(0.97) skewY(-1deg);
+    }
+    100% {
+      transform: translateY(0) scaleY(1) skewY(0);
+      opacity: 1;
+    }
   }
 
   .links.show {
     justify-content: center;
     max-height: 500px;
     opacity: 1;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    border-radius: 0 0 12px 12px;
+    transform: translateY(0) scaleY(1) skewY(0);
+    animation: navBounce 0.9s cubic-bezier(0.22, 1.5, 0.36, 1);
   }
 
   .links ul {
