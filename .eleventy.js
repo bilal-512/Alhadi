@@ -56,6 +56,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("*.jpg");
   eleventyConfig.addPassthroughCopy("*.png");
   eleventyConfig.addPassthroughCopy("*.svg");
+  eleventyConfig.addPassthroughCopy("sitemap.xml");
 
   // Add date filter
   eleventyConfig.addFilter("dateFormat", function(date) {
