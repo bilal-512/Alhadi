@@ -241,69 +241,7 @@ document.querySelectorAll('.faq-question').forEach(question => {
 
 // ===== Blog Page Functionality =====
 
-// Category filter functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const categoryButtons = document.querySelectorAll('.category-btn');
-    const blogCards = document.querySelectorAll('.blog-card');
-    
-    categoryButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all buttons
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            const selectedCategory = this.getAttribute('href').split('/').pop();
-            
-            // Filter blog cards
-            blogCards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-                
-                if (selectedCategory === 'blog' || selectedCategory === cardCategory) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.5s ease-in-out';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            // Update URL without page reload
-            if (selectedCategory !== 'blog') {
-                history.pushState(null, '', `/blog/category/${selectedCategory}`);
-            } else {
-                history.pushState(null, '', '/blog');
-            }
-        });
-    });
-    
-    // Handle browser back/forward buttons
-    window.addEventListener('popstate', function() {
-        const path = window.location.pathname;
-        const category = path.split('/').pop();
-        
-        // Update active button
-        categoryButtons.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('href').includes(category)) {
-                btn.classList.add('active');
-            }
-        });
-        
-        // Filter cards accordingly
-        blogCards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-            
-            if (category === 'blog' || category === cardCategory) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    });
-});
+
 
 // Blog card hover effects
 document.addEventListener('DOMContentLoaded', function() {
