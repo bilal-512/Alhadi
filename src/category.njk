@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.categories
+  size: 1
+  alias: category
+permalink: /blog/category/{{ category | slug }}/index.html
+---
+
+<h1>Category: {{ category }}</h1>
+
+<div class="blog-grid">
+    {% set categoryPosts = collections.posts | filterByCategory(category) %}
+    {% for post in categoryPosts %}
+        <article class="blog-card" data-category="{{ post.data.category | slug }}">
+            <div class="blog-image">
+                {% if post.data.icon %}
+                <i class="{{ post.data.icon }}"></i>
+                {% else %}
+                <i class="fas fa-book-quran"></i>
+                {% endif %}
+            </div>
+            <div class="blog-content">
+                <div class="blog-meta">
+                    <span class="blog-category">{{ post.data.category }}</span>
+                    <span><i class="fas fa-calendar"></i> {{ post.data.date | dateFormat }}</span>
+                </div>
+                <h3 class="blog-title">
+                    <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+                </h3>
+                <p class="blog-excerpt">{{ post.data.description or (post.templateContent | striptags | excerpt) }}</p>
+                <a href="{{ post.url | url }}" class="blog-read-more">Read Complete Guide <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </article>
+    {% endfor %}
+</div>

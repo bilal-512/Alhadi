@@ -10,6 +10,14 @@ pagination:
   alias: posts
 ---
 
+<!-- Category Filters -->
+<div class="category-filters" id="categoryFilters">
+    <a href="/blog/" class="category-filter {% if page.url == '/blog/' %}active{% endif %}">All Categories</a>
+    {% for category in collections.categories %}
+        <a href="{{ '/blog/category/' | url }}{{ category | slug }}/" class="category-filter {% if page.url == '/blog/category/' + (category | slug) + '/' %}active{% endif %}">{{ category }}</a>
+    {% endfor %}
+</div>
+
 <!-- Blog Grid -->
 <div class="blog-grid">
     {% for post in posts %}

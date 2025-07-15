@@ -39,9 +39,76 @@
   <!-- Internal Sections (Single Page Anchors) -->
   <url>
     <loc>https://quraniciq.com/blog.html</loc>
-    <lastmod>2025-07-13</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
+  </url>
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://quraniciq.com/blog/2024-02-20-benefits-of-regular-quran-recitation</loc>
+    <lastmod>2025-07-15</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://quraniciq.com/blog/2024-02-25-tajweed-rules-for-beginners</loc>
+    <lastmod>2025-07-15</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://quraniciq.com/blog/2024-07-13-transformative-power-of-quranic-education</loc>
+    <lastmod>2025-07-15</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://quraniciq.com/blog/2025-07-13-how-we-help-people-to-learn-quran</loc>
+    <lastmod>2025-07-15</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://quraniciq.com/blog/2025-07-13-ultimate-guide-to-online-quran-education</loc>
+    <lastmod>2025-07-15</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://quraniciq.com/blog/2025-07-14-importance-of-learning-quran-with-tajweed-for-children</loc>
+    <lastmod>2025-07-15</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://quraniciq.com/blog/2025-07-14-importance-of-understanding-quran-not-just-reciting</loc>
+    <lastmod>2025-07-15</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://quraniciq.com/blog/2025-07-14-importance-of-understanding-the-quran</loc>
+    <lastmod>2025-07-15</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://quraniciq.com/blog/2025-07-14-unraveling-islamophobia-imran-khan</loc>
+    <lastmod>2025-07-15</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://quraniciq.com/blog/204-02-15-importance-of-learnign-quran-with-tajweed</loc>
+    <lastmod>2025-07-15</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://quraniciq.com/blog/anotherblog</loc>
+    <lastmod>2025-07-15</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://quraniciq.com/#home</loc>
