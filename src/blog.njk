@@ -10,14 +10,6 @@ pagination:
   alias: posts
 ---
 
-<!-- Category Filters -->
-<div class="category-filters" id="categoryFilters">
-    <a href="/blog/" class="category-filter {% if page.url == '/blog/' %}active{% endif %}">All Categories</a>
-    {% for category in collections.categories %}
-        <a href="{{ '/blog/category/' | url }}{{ category | slug }}/" class="category-filter {% if page.url == '/blog/category/' + (category | slug) + '/' %}active{% endif %}">{{ category }}</a>
-    {% endfor %}
-</div>
-
 <!-- Blog Grid -->
 <div class="blog-grid">
     {% for post in posts %}
@@ -66,17 +58,8 @@ pagination:
 {% endif %}
 
 <div class="tag-cloud" id="tagCloud">
-    <a href="/blog/" class="tag active" data-tag="all">All Posts</a>
-    <a href="/blog/tag/tajweed/" class="tag" data-tag="tajweed">Tajweed</a>
-    <a href="/blog/tag/quran-learning/" class="tag" data-tag="quran-learning">Quran Learning</a>
-    <a href="/blog/tag/spiritual-growth/" class="tag" data-tag="spiritual-growth">Spiritual Growth</a>
-    <a href="/blog/tag/memorization/" class="tag" data-tag="memorization">Memorization</a>
-    <a href="/blog/tag/islamic-education/" class="tag" data-tag="islamic-education">Islamic Education</a>
-    <a href="/blog/tag/kids-classes/" class="tag" data-tag="kids-classes">Kids Classes</a>
-    <a href="/blog/tag/online-learning/" class="tag" data-tag="online-learning">Online Learning</a>
-    <a href="/blog/tag/arabic-language/" class="tag" data-tag="arabic-language">Arabic Language</a>
-    <a href="/blog/tag/prayer/" class="tag" data-tag="prayer">Prayer</a>
-    <a href="/blog/tag/islamic-values/" class="tag" data-tag="islamic-values">Islamic Values</a>
-    <a href="/blog/tag/hifz/" class="tag" data-tag="hifz">Hifz</a>
-    <a href="/blog/tag/quran-recitation/" class="tag" data-tag="quran-recitation">Quran Recitation</a>
+    <a href="/blog/" class="tag {% if page.url == '/blog/' %}active{% endif %}">All Categories</a>
+    {% for category in collections.categories %}
+        <a href="{{ '/blog/category/' | url }}{{ category | slug }}/" class="tag {% if page.url == '/blog/category/' + (category | slug) + '/' %}active{% endif %}">{{ category }}</a>
+    {% endfor %}
 </div>

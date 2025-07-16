@@ -193,8 +193,9 @@ templateClass: post
         <div class="tags-section">
             <h3>Browse by Category</h3>
             <div class="tag-cloud">
+                <a href="/blog/" class="tag {% if page.url == '/blog/' %}active{% endif %}">All Categories</a>
                 {% for category in collections.categories %}
-                <a href="/blog/category/{{ category | slug }}" class="tag">{{ category }}</a>
+                <a href="/blog/category/{{ category | slug }}/" class="tag {% if page.url == '/blog/category/' + (category | slug) + '/' %}active{% endif %}">{{ category }}</a>
                 {% endfor %}
             </div>
         </div>
