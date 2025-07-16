@@ -48,6 +48,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setLibrary("md", md);
 
   // Copy static files
+  eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("style.css");

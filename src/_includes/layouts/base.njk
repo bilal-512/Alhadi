@@ -40,7 +40,7 @@
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:image" content="{{ image or site.ogImage or site.defaultImage }}">
     <meta property="og:site_name" content="{{ site.title }}">
-    {% if tags %}<meta property="og:keywords" content="{{ tags | join(', ') }}">{% endif %}
+    {% if tags %}<meta property="og:keywords" content="{{ tags | default([]) | join(', ') }}">{% endif %}
     {% if date %}<meta property="article:published_time" content="{{ date }}">{% endif %}
     {% if lastUpdated %}<meta property="article:modified_time" content="{{ lastUpdated }}">{% endif %}
     {% if category %}<meta property="article:section" content="{{ category }}">{% endif %}
@@ -84,7 +84,7 @@
         "@type": "ImageObject",
         "url": "{{ image or site.ogImage or site.defaultImage }}"
       },
-      "keywords": "{{ tags | join(', ') }}",
+      "keywords": "{{ tags | default([]) | join(', ') }}",
       "articleSection": "{{ category }}"
     }
     </script>

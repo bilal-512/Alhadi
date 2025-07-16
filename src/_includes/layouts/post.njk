@@ -33,7 +33,7 @@ templateClass: post
     "@type": "ImageObject",
     "url": "{{ site.url }}{{ image or '/images/blog-default.jpg' }}"
   },
-  "keywords": "{{ tags | join(', ') }}",
+  "keywords": "{{ tags | default([]) | join(', ') }}",
   "articleSection": "{{ category }}"
 }
 </script>
